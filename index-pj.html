@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Princípios da Prosperidade</title>
+    <meta name="description" content="Explore os ensinamentos milenares sobre prosperidade e desenvolva uma nova mentalidade financeira e pessoal. Acesse o guia.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-blue: #152029;
+            --secondary-blue: #1e3a8a;
+            --accent-gold: #fbbf24;
+            --light-gold: #fcd34d;
+            --pure-white: #ffffff;
+            --light-gray: #f8fafc;
+            --text-gray: #cbd5e1;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            background: var(--primary-blue);
+            color: var(--text-gray);
+            padding-top: 60px;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        h1, h2, h3 { font-family: 'Work Sans', sans-serif; color: var(--pure-white); }
+        section { padding: 100px 0; }
+
+        /* Header */
+        .official-branding {
+            background: linear-gradient(135deg, var(--secondary-blue), var(--primary-blue));
+            padding: 12px 0;
+            text-align: center;
+            border-bottom: 2px solid var(--accent-gold);
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        .official-branding span { color: var(--accent-gold); font-weight: 600; font-size: 16px; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* Hero Section */
+        .hero {
+            min-height: 90vh;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            padding: 120px 0;
+            display: flex;
+            align-items: center;
+        }
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        .hero-text h1 { font-size: clamp(2.5rem, 5vw, 3.8rem); font-weight: 800; line-height: 1.1; margin-bottom: 24px; }
+        .hero-text p { font-size: 1.25rem; margin-bottom: 40px; line-height: 1.6; font-weight: 400; }
+        
+        /* CTA Button */
+        .cta-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-gold), var(--light-gold));
+            color: var(--primary-blue);
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 18px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 8px 25px rgba(251, 191, 36, 0.3);
+            animation: pulse-cta 2s ease-in-out infinite;
+        }
+        .cta-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(251, 191, 36, 0.4); animation: none; }
+        @keyframes pulse-cta { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+
+        /* Trust Elements */
+        .trust-elements { display: flex; gap: 24px; margin-top: 32px; opacity: 0.8; }
+        .trust-item { display: flex; align-items: center; gap: 8px; color: white; font-size: 14px; font-weight: 500; }
+        
+        /* Hero Visual (Product Mockup) */
+        .hero-visual { display: flex; justify-content: center; align-items: center; }
+        .hero-book-image {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+            border: 3px solid var(--accent-gold);
+            transform: perspective(1000px) rotateY(-10deg) rotateX(5deg);
+            transition: all 0.4s ease;
+        }
+        .hero-book-image:hover { transform: perspective(1000px) rotateY(0) rotateX(0) scale(1.05); }
+        
+        /* Section Header */
+        .section-header { text-align: center; margin-bottom: 60px; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .section-header h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin-bottom: 16px; }
+        .section-header p { font-size: 1.125rem; color: var(--text-gray); }
+
+        /* Content Section */
+        #conteudo { background: var(--primary-blue); }
+        .content-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; }
+        .content-card {
+            background: rgba(30, 58, 138, 0.2);
+            padding: 32px;
+            border-radius: 16px;
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            transition: all 0.3s ease;
+        }
+        .content-card:hover { transform: translateY(-5px); border-color: var(--accent-gold); }
+        .content-card-icon { font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 16px; }
+        .content-card h3 { font-size: 1.3rem; margin-bottom: 12px; }
+        
+        /* Testimonials Section */
+        #depoimentos { background-color: #101a23; }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; }
+        .testimonial-card {
+            background: var(--primary-blue);
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            border-radius: 12px;
+            padding: 24px;
+        }
+        .testimonial-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+        .testimonial-avatar { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
+        .testimonial-info h4 { font-size: 1rem; color: var(--pure-white); }
+        .testimonial-info span { font-size: 0.85rem; color: var(--accent-gold); }
+        .testimonial-text { font-style: italic; }
+
+        /* Guarantee Section */
+        #garantia { background: linear-gradient(135deg, var(--secondary-blue), var(--primary-blue)); }
+        .guarantee-box {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(21, 32, 41, 0.6);
+            border: 2px solid var(--accent-gold);
+            border-radius: 20px;
+            padding: 48px;
+            text-align: center;
+        }
+        .guarantee-box img { max-width: 120px; margin-bottom: 24px; }
+        .guarantee-box h2 { font-size: 2.5rem; margin-bottom: 16px; }
+        .guarantee-box p { font-size: 1.1rem; max-width: 600px; margin: 0 auto 32px; }
+        
+        /* Final CTA Section */
+        .cta-final { text-align: center; }
+        .cta-final p { font-size: 1.25rem; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+        /* Footer */
+        .footer { padding: 60px 0 40px; text-align: center; border-top: 1px solid rgba(251, 191, 36, 0.2); }
+        .footer-navigation { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-bottom: 40px; }
+        .footer-navigation a { color: var(--text-gray); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.3s ease; }
+        .footer-navigation a:hover { color: var(--accent-gold); }
+        .footer-disclaimer { font-size: 11px; max-width: 800px; margin: 0 auto; line-height: 1.6; opacity: 0.7; }
+        
+        /* Legal Pages Section */
+        .legal-pages { padding: 80px 0; background-color: #101a23; }
+        .legal-content { max-width: 800px; margin: 0 auto; }
+        .legal-content h3 { color: var(--accent-gold); margin-bottom: 20px; font-size: 1.8rem; }
+        .legal-content p, .legal-content li { margin-bottom: 16px; line-height: 1.7; }
+        .legal-content ul { list-style-position: inside; padding-left: 10px; }
+        .legal-section { margin-bottom: 60px; }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content { grid-template-columns: 1fr; gap: 60px; text-align: center; }
+            .hero-text { order: 2; }
+            .hero-visual { order: 1; }
+            .trust-elements { justify-content: center; }
+            .hero-book-image { transform: perspective(1000px) rotateY(0); max-width: 320px; }
+        }
+        @media (max-width: 768px) {
+            section { padding: 80px 0; }
+            .hero { padding: 80px 0; }
+        }
+    </style>
+</head>
+<body>
+    
+    <header class="official-branding">
+        <span>Site Oficial - Prosperidade Judaica</span>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Inicie Sua Jornada Rumo a uma Vida Mais Próspera e Consciente</h1>
+                    <p>Acesse os princípios e ensinamentos para transformar sua relação com o sucesso e as finanças, com base em conhecimentos validados pelo tempo.</p>
+                    <a href="https://go.hotmart.com/D101414430L?ap=d111" class="cta-primary">Acessar Agora</a>
+                    <div class="trust-elements">
+                        <div class="trust-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #fbbf24;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                            <span>Compra 100% Segura</span>
+                        </div>
+                        <div class="trust-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: #fbbf24;"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.3"></path></svg>
+                            <span>Entrega em todo Brasil</span>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+    <section id="conteudo">
+        <div class="container">
+            <div class="section-header">
+                <h2>O que você vai aprender?</h2>
+                <p>Este guia é um compilado prático de ensinamentos para aplicação imediata no seu dia a dia.</p>
+            </div>
+            <div class="content-grid">
+                <div class="content-card">
+                    <div class="content-card-icon">🧠</div>
+                    <h3>Mentalidade de Abundância</h3>
+                    <p>Aprenda orações para focar no crescimento, superando crenças limitantes que impedem seu sucesso financeiro e pessoal.</p>
+                </div>
+                <div class="content-card">
+                    <div class="content-card-icon">📈</div>
+                    <h3>Princípios Financeiros</h3>
+                    <p>Descubra as práticas de cuidado, investimento e ganhos de valor que são a base de uma vida financeira sólida e próspera.</p>
+                </div>
+                <div class="content-card">
+                    <div class="content-card-icon">🛡️</div>
+                    <h3>Resiliência e Propósito</h3>
+                    <p>Desenvolva a força emocional e a clareza de propósito para navegar por desafios e manter o foco em seus objetivos de longo prazo.</p>
+                </div>
+            </div>
+            
+        </section>
+
+    <section class="cta-final">
+        <div class="container">
+            <div class="section-header">
+                <h2>Dê o primeiro passo para uma vida mais consciente e próspera</h2>
+                <p>Chegou a hora de investir no seu maior ativo: seu conhecimento. Aplique os princípios que resistiram ao teste do tempo e comece a construir seu futuro hoje.</p>
+                <a href="https://go.hotmart.com/D101414430L?ap=d111" class="cta-primary">Sim, Quero Começar Agora</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="depoimentos">
+        <div class="container">
+            <div class="section-header">
+                <h2>O que nossos leitores dizem</h2>
+                <p>Resultados e percepções de pessoas que aplicaram estes ensinamentos.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Foto de Carlos" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4>Carlos M.</h4>
+                            <span>Leitor Verificado</span>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Mudou completamente minha forma de ver o dinheiro e o trabalho. Não é sobre fórmulas mágicas, é sobre ter os conhecimentos certos. Recomendo demais!"</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Foto de Ana" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4>Ana Paula S.</h4>
+                            <span>Leitora Verificada</span>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Um material rico e direto ao ponto. Os conceitos são profundos, mas explicados de uma forma que qualquer um pode entender e aplicar. Já sinto a diferença."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="https://randomuser.me/api/portraits/men/51.jpg" alt="Foto de Ricardo" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4>Ricardo L.</h4>
+                            <span>Leitor Verificado</span>
+                        </div>
+                    </div>
+                    <p class="testimonial-text">"Eu era muito cético, mas a lógica por trás dos ensinamentos é inegável. É sobre disciplina, orações e fé. Um verdadeiro guia para a vida."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="garantia">
+        <div class="container">
+            <div class="guarantee-box">
+                <h2>Garantia de 60 Dias</h2>
+                <p>Seu investimento é 100% seguro. Você tem 60 dias para explorar os segredos. Se, por qualquer motivo, você não sentir que este material é para você, basta solicitar o reembolso e devolveremos seu dinheiro integralmente. Sem perguntas, sem burocracia.</p>
+                <a href="https://go.hotmart.com/D101414430L?ap=d111" class="cta-primary">Quero Receber com Garantia</a>
+            </div>
+        </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-navigation">
+                <a href="#home">Início</a>
+                <a href="#conteudo">Conteúdo</a>
+                <a href="#depoimentos">Depoimentos</a>
+                <a href="#faq">FAQ</a>
+                <a href="#termos">Termos de Uso</a>
+                <a href="#privacidade">Política de Privacidade</a>
+            </div>
+            <div class="footer-disclaimer">
+                <p style="margin-bottom: 16px; color: var(--pure-white); font-weight: 600;">© 2025 Princípios da Prosperidade. Todos os direitos reservados.</p>
+                <p>Este site não é afiliado ao Facebook, Google ou qualquer uma de suas entidades. O conteúdo e os produtos aqui apresentados são de inteira responsabilidade de "Princípios da Prosperidade". Os resultados individuais podem variar e dependem do esforço e dedicação de cada um na aplicação dos conhecimentos adquiridos. Este produto não substitui o aconselhamento financeiro profissional.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <section class="legal-pages">
+        <div class="container">
+            <div class="legal-content">
+                <div id="termos" class="legal-section">
+                    <h3>Termos de Uso</h3>
+                    <p>Ao adquirir e utilizar nosso material, você concorda em não distribuir, copiar ou revender o conteúdo, que é protegido por direitos autorais. O guia destina-se ao uso pessoal e educacional. Reservamo-nos o direito de alterar estes termos a qualquer momento.</p>
+                </div>
+                <div id="privacidade" class="legal-section">
+                    <h3>Política de Privacidade</h3>
+                    <p>Sua privacidade é importante. As informações coletadas durante a compra (nome, e-mail) são usadas exclusivamente para processar seu pedido e para comunicação sobre o produto. Os dados de pagamento são processados de forma segura pela Hotmart. Não compartilhamos suas informações com terceiros.</p>
+                </div>
+                <div id="devolucao" class="legal-section">
+                    <h3>Política de Devolução e Reembolso</h3>
+                    <p>Oferecemos uma garantia de satisfação de 60 dias. Se você não estiver satisfeito com o produto, pode solicitar um reembolso total dentro de 60 dias a partir da data da compra. O processo é simples e o reembolso será efetuado conforme os prazos da operadora de cartão ou método de pagamento utilizado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
